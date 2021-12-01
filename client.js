@@ -12,13 +12,17 @@ const connect = function () {
   // getting data from server
   conn.on('data', (data) => {
     console.log(data);
+    conn.write('Move: up');
   });
 
   conn.on('connect', (socket) => {
     console.log('Successfully connected to game server');
   });
 
+  // write name on snake
   conn.write('Name: MTM');
+
+  // Move: up
   return conn;
 };
 
