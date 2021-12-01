@@ -1,3 +1,5 @@
+const IP = '10.0.0.142';
+const PORT = 50541;
 const w = 'Move: up';
 const s = 'Move: down';
 const a = 'Move: left';
@@ -15,5 +17,7 @@ const KEY_PRESSES = {
 };
 
 module.exports = {
+  IP,
+  PORT,
   KEY_PRESSES,
 };
