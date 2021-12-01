@@ -1,10 +1,6 @@
-const net = require('net');
-const connect = require('./client');
+const { connect } = require('./client');
+const { setupInput } = require('./input');
 
 console.log('Connecting ...');
-connect();
 
-// start an instance of a tcp server
-// const server = net.createServer();
-
-
+setupInput(connect());

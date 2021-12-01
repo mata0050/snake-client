@@ -8,22 +8,20 @@ const connect = function () {
 
   // interpret incoming data as text
   conn.setEncoding('utf8');
-
-  // getting data from server
   conn.on('data', (data) => {
     console.log(data);
-    conn.write('Move: up');
+    conn.write('Move: right');
   });
 
-  conn.on('connect', (socket) => {
-    console.log('Successfully connected to game server');
+  conn.on('connect', () => {
+    console.log('Successfully Connected!');
+    conn.write('Name: 4G');
+    // conn.write("Move: up");
+    // setInterval(() => {
+    //   conn.write("Move: up");
+    // }, 500);
   });
-
-  // write name on snake
-  conn.write('Name: MTM');
-
-  // Move: up
   return conn;
 };
 
-module.exports = connect;
+module.exports = { connect };
